@@ -26,17 +26,12 @@ class CDI
 
 
         $file = getcwd().'/tmp/'.$data->format('Ymd').'.txt';
-
         if($data->format('w') == 0 || $data->format('w') == 6){
             throw new \Exception('Não existe taxa para finais de semana.');
         }
         if(!file_exists($file)){
-            $this->updateMedias();
-        }
-        if(!file_exists($file)){
             throw new \Exception('Arquivo ainda não existe');
         }
-
         chmod($file,0777);
         $taxa = file_get_contents($file);
         $taxa /= 100;
