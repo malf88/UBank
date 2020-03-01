@@ -1,0 +1,22 @@
+{
+    "name": "malf88/ubank",
+    "description": "Biblioteca de fun;ções para cálculos bancarios.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Marco Auréelio",
+            "email": "malf88@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.5",
+        "nesbot/carbon": "^2.30",
+        "nicolab/php-ftp-client": "^1.5"
+    },
+    "license": "BSD-2-Clause",
+    "autoload": {
+        "psr-4": {
+            "Ubank\\":"Ubank/"
+        }
+    }
+}
