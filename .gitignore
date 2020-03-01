@@ -1,4 +1,4 @@
 /vendor/
 /docker
 docker-compose.yml
-/tmp/
+/tmp/*.txt
