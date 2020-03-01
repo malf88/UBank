@@ -34,6 +34,7 @@ class CDI
         }
         chmod($file,0777);
         $taxa = file_get_contents($file);
+        $taxa = (int) $taxa;
         $taxa /= 100;
         return $taxa;
 
