@@ -24,8 +24,8 @@ class UbankJurosSimples
         return $this->juros;
     }
     public function calcularValorTotal(){
-        $juros = $this->calcularJuros();
-        return $this->capital + $juros;
+        $calJuros = $this->calcularJuros();
+        return $this->capital + $calJuros;
     }
 
 }

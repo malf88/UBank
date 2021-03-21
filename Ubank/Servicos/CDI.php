@@ -7,6 +7,7 @@ namespace Ubank\Servicos;
 use Carbon\Carbon;
 use FtpClient\FtpClient;
 use GuzzleHttp\Client;
+use Ubank\Exception\UbankException;
 
 class CDI
 {
@@ -27,16 +28,16 @@ class CDI
 
         $file = getcwd().'/tmp/'.$data->format('Ymd').'.txt';
         if($data->format('w') == 0 || $data->format('w') == 6){
-            throw new \Exception('Não existe taxa para finais de semana.');
+            throw new UbankException('Não existe taxa para finais de semana.');
         }
         if(!file_exists($file)){
-            throw new \Exception('Arquivo ainda não existe');
+            throw new UbankException('Arquivo ainda não existe');
         }
         chmod($file,0777);
         $taxa = file_get_contents($file);
         $taxa = (int) $taxa;
-        $taxa /= 100;
-        return $taxa;
+        return ($taxa /= 100);
+
 
     }
 

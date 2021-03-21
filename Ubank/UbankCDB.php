@@ -44,7 +44,7 @@ class UbankCDB
         $dias = $dataFinal->diff($dataInicio)->days;
 
         $ubank = new UbankJurosCompostos(0,$valor,$taxa,$dias);
-        $valorFinal = $ubank->calcularMontante();
-        return $valorFinal;
+        return $ubank->calcularMontante();
+
     }
 }
