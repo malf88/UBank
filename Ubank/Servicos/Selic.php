@@ -11,8 +11,7 @@ class Selic
 {
     const URL_API = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json';
     private function getConexao(){
-        $cliente = new Client();
-        return $cliente;
+        return  new Client();
     }
 
     public function getTaxaPorData(Carbon $data){

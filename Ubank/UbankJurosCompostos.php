@@ -20,7 +20,6 @@ class UbankJurosCompostos
         $this->montante = $montante;
         $this->principal = $principal;
         $this->taxa = ($taxa/100);
-        $this->principal = $principal;
         $this->periodos = $periodos;
     }
 
@@ -38,7 +37,7 @@ class UbankJurosCompostos
      * x = 16777216/126
      */
     public function calcularPrincipal(){
-        $this->principal = (pow(1+$this->taxa,$this->periodos)) / $this->montante;
+        $this->principal = $this->montante / (pow(1+$this->taxa,$this->periodos));
         return $this->principal;
     }
 
