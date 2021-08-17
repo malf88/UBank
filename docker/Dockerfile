@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.4-apache
 MAINTAINER Marco Aurélio <malf88@gmail.com>
 
 WORKDIR /var/www
@@ -16,16 +16,13 @@ RUN apt-get update && apt-get -y upgrade && \
         libcurl4-gnutls-dev \
         libxml2-dev \
         ftp \
+        libzip-dev \
         libpng-dev && \
     docker-php-ext-install \
         bcmath \
         calendar \
-        curl \
-        dom \
-        fileinfo \
-        hash \
-        json \
-        mbstring \
+        #hash \
+        #mbstring \
         sockets \
         zip && \
     pecl install xdebug && \

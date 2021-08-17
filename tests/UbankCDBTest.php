@@ -6,10 +6,10 @@ class UbankCDBTest extends TestCase
 {
     public function testDeveCalcularValorAtualCDBComCDI(){
         $ubankCDB = new UbankCDB();
-        $mockCDI = $this->createMock(CDI::class);
-        $mockCDI->method('getTaxaPorData')
-            ->willReturn('000000440');
-        $this->assertEquals(1000.12,round($ubankCDB->calcularValorAtualCDBComCDI(1000,new \Carbon\Carbon('2020-01-02'),new \Carbon\Carbon('2020-01-03'),100),2));
+        $mockCDI = $this->createMock(UbankCDB::class);
+        $mockCDI->method('getTaxaMediaPeriodo')
+            ->willReturn(2.7787958115183);
+        $this->assertEquals(5107.26,round($ubankCDB->calcularValorAtualCDBComCDI(5000,new \Carbon\Carbon('2020-11-12'),new \Carbon\Carbon('2021-08-16'),102),2));
     }
     public function testCalcularValorAtualCDBPrefixado(){
         $ubankCDB = new UbankCDB();
