@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^7.4.2",
+        "guzzlehttp/guzzle": "^7.4.2 || ^6.0.0",
         "nesbot/carbon": "^2.30",
         "nicolab/php-ftp-client": "^1.5"
     },
